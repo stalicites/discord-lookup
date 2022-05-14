@@ -7,12 +7,12 @@ const idInput = document.getElementById("id-container");
 
 const errorHeader = document.getElementById("header");
 
-const endPoint = `https://discord-lookup-server.herokuapp.com/`;
+const endPoint = `https://discord-lookup-server.herokuapp.com`;
 
 function uToD(unix) {  
     let stamp = moment.unix(unix/1000)
-    return stamp.format('MM/DD/YY - HH:mm:ss');
-}
+    return stamp.format('MM/DD/YY - h:mm:ss A');
+}   
 
 function fetchDataByUser(id) {
     let q = new XMLHttpRequest();
@@ -23,20 +23,20 @@ function fetchDataByUser(id) {
         let res = JSON.parse(q.responseText);
         console.log(res);
         if (res.bannerURL != null) {
+            document.getElementById("banner-img").src = `https://cdn.discordapp.com/banners/${res.query}/${res.bannerURL}?size=1024`;
             document.getElementById("banner-img").style.display = "block";
             document.getElementById("banner-header").style.display = "block";
             document.getElementById("banner-color").style.display = "none";
             document.getElementById("panel").style.height = "350px";
-            document.getElementById("banner-img").src = `https://cdn.discordapp.com/banners/${res.query}/${res.bannerURL}?size=1024`;
         } else {
             document.getElementById("panel").style.height = "245px";
             document.getElementById("banner-img").style.display = "none";
             document.getElementById("banner-header").style.display = "none";
             document.getElementById("banner-color").style.display = "block";
         }
+        document.getElementById("profile-image").src = res.avatar + "?size=1024";
         document.getElementById("created-at").innerText = `Created at: ${uToD(res.createdAt)}`
         document.getElementById("username").innerText = `Username: ${res.username}`;
-        document.getElementById("profile-image").src = res.avatar + "?size=1024";
         document.getElementById("banner-color").innerText = `Banner Color: ${res.bannerColor}`;
         //document.getElementById("banner-color").style.backgroundColor = res.bannerColor;
         document.getElementById("query-id").innerText = `Query ID: ${res.query}`;
@@ -47,13 +47,31 @@ function fetchDataByUser(id) {
     }
     q.onerror = function(e) {
         console.log(e);
+        console.log(`Request status: ${q.status}`)
         errorHeader.className = "show"
+        let index = 0;
+        setInterval(function() {
+            if (index != 1) {
+                errorHeader.className = ""
+                index++;
+                console.log("RUNNING");
+            } else {
+                clearInterval();
+            }
+        }, 4000)
     }
 }
 
 lookUpButton.onclick = function() {
     const id = idInput.value;
     fetchDataByUser(id);
+}
+
+idInput.onkeyup = function(e) {
+    if (e.key == "Enter") {
+        const id = idInput.value;
+        fetchDataByUser(id);
+    }
 }
 
 goBack.onclick = function() {

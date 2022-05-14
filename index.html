@@ -5,20 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (min-width: 650px)" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 650px)" href="small.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-<script src="https://momentjs.com/downloads/moment.min.js"></script>
-<script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.min.js"></script>
 </head>
 <body>
-    <div id = "header">That doesn't seem right</div>
+    <div id = "header">That doesn't seem like a valid ID</div>
     <div class = "container">
         <div id = "id-paste" class="container">
             <h1>Discord User Lookup</h1>
             <div id = "id-ui">
-                <input type="number" id = "id-container" placeholder="Discord ID">
+                <input type="number" id = "id-container" placeholder="Discord ID" >
+                <p></p>
                 <button effect = "ripple" id = "look-up">Look Up</button>
             </div>
         </div>
@@ -32,7 +34,7 @@
                 </div>
                 <div id = "profileData">
                     <p id = "banner-header" style="display: none;">Banner:</p>
-                    <img src="https://cdn.discordapp.com/banners/922319662673432647/a_908f3fddb3eb030237d0f77c100460ad.png?size=1024" alt="banner-img" style="display: none;" id = "banner-img">
+                    <img src="" alt="banner-img" style="display: none;" id = "banner-img">
                     <p id = "created-at">Created at: </p>
                     <p id = "username">Username: </p>
                     <p id = "badges">Badges: </p>

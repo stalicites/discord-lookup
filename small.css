@@ -1,3 +1,5 @@
+/* For small screens */
+
 button {
     width: 140px;
     height: 25px;
@@ -5,7 +7,7 @@ button {
     border: 1px solid rgb(153, 153, 255);
     background-color: white;
     cursor: pointer;
-    border-radius: 0.25vw;
+    border-radius: 1vw;
     margin-left: 5px;
 }
 
@@ -84,12 +86,6 @@ input[type=number] {
     margin-top: 20px;
 }
 
-#id-ui {
-    display: flex;
-    flex-direction: row;
-
-    margin-left: 7px;
-}
 
 .hidden {
     visibility: hidden;
@@ -104,7 +100,7 @@ input[type=number] {
 }
 
 h1 {
-    font-size: 58.25px;
+    font-size: 8.95vw;
     padding: 0;
     margin: 0;
 }
@@ -137,10 +133,11 @@ h1 {
 }
 
 input {
-    width: 275px;
+    width: 70vw;
     height: 20px;
     border: 2px solid black;
     outline: none;
+    margin-left: 7.5px;
 }
 
 body {
@@ -195,4 +192,3 @@ body {
     opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
     transition: calc(var(--t, 0) * var(--ripple-duration, 600ms)) var(--ripple-easing, linear);
 }
-  
