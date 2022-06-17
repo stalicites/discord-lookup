@@ -6,7 +6,6 @@ button {
     background: rgb(0, 177, 151);
     cursor: pointer;
     border-width: 0;
-    border-radius: 2.5px;
 }
 
 #header {
