@@ -51,7 +51,13 @@ function fetchDataByUser(id) {
             document.getElementById("banner-color").innerText = `Banner Color: ${res.bannerColor}`;
         }
         if (res.badge.length != 0) {
-            let seen = {}
+            let seen = {};
+            document.getElementById("badges").innerHTML = 
+            `
+            <div id = "badges">
+                <p id = "holder-badges">Badges: </p>
+            </div>
+            `
             res.badge.forEach((badge) => {
                 if (badge != "verifiedBot") {    
                     let img = document.createElement("img");
@@ -118,10 +124,4 @@ idInput.onkeyup = function(e) {
 goBack.onclick = function() {
     idPaste.className = "container visible"
     panel.className = "container hidden";
-    document.getElementById("badges").innerHTML = 
-    `
-    <div id = "badges">
-        <p id = "holder-badges">Badges: </p>
-    </div>
-    `
 }
