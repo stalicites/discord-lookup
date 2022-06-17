@@ -85,7 +85,7 @@ button {
 
 #id-paste {
     background: rgb(35, 39, 41);
-    padding: 40px 60px;
+    padding: 60px 80px;
     border-radius: 7.5px;
 }
 
@@ -100,7 +100,7 @@ button {
 }
 
 #id-container:focus {
-    border-bottom: 2px solid rgb(43, 255, 135);
+    border-bottom: 2px solid rgb(0, 255, 76);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -142,6 +142,7 @@ h1 {
     font-size: 58.25px;
     padding: 0;
     margin: 0;
+    margin-bottom: 5px;
     width: 100%;
     color: rgb(255, 255, 255);
 }
